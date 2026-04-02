@@ -1,0 +1,15 @@
+1,Raju,9123456.0,PermanentEmployee
+2,Anil,40000.0,ContractEmployee
+3,Sita,60000.0,PermanentEmployee
+4,Ravi,35000.0,ContractEmployee
+5,Kiran,70000.0,PermanentEmployee
+6,Arjun,30000.0,ContractEmployee
+7,Meena,80000.0,PermanentEmployee
+8,Divya,45000.0,ContractEmployee
+9,Rahul,90000.0,PermanentEmployee
+10,Sneha,38000.0,ContractEmployee
+11,Vijay,75000.0,PermanentEmployee
+12,Pooja,42000.0,ContractEmployee
+13,Manoj,65000.0,PermanentEmployee
+14,Neha,37000.0,ContractEmployee
+98765,Poorvika,1000.0,ContractEmployee
