@@ -13,3 +13,4 @@
 13,Manoj,65000.0,PermanentEmployee
 14,Neha,37000.0,ContractEmployee
 98765,Poorvika,1000.0,ContractEmployee
+2026,Kishore,90000.0,PermanentEmployee

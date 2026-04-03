@@ -21,13 +21,13 @@ public class EMSApp {
             }
         } catch (Exception e) {}
 
-        System.out.println("==================================");
-        System.out.println("     WELCOME TO IBM EMS SYSTEM    ");
-        System.out.println("==================================");
+        System.out.println("-------------------------");
+        System.out.println("WELCOME TO IBM EMS SYSTEM");
+        System.out.println("-------------------------");
 
         while (true) {
 
-            System.out.println("\n==================================");
+            
             System.out.println("1. Add Employee");
             System.out.println("2. View Employees");
             System.out.println("3. Update Employee");
@@ -36,8 +36,9 @@ public class EMSApp {
             System.out.println("6. Process Salary");
             System.out.println("7. Save Data");
             System.out.println("8. Exit");
-            System.out.println("==================================");
+            System.out.println("\n-------------------------");
             System.out.print("Enter choice: ");
+            
 
             String input = sc.next();
             int ch;
