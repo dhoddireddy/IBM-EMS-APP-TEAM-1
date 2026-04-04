@@ -8,6 +8,8 @@ public class ContractEmployee extends Employee {
 
     @Override
     public double calculateSalary() {
-        return getSalary();
+        double salary = getSalary();
+        double deduction = salary * 0.05; // 5% deduction
+        return salary - deduction;
     }
 }
