@@ -30,6 +30,7 @@ public class EmployeeService {
                 System.out.println("ID already exists!");
                 System.out.println("Thanks for using IBM EMS System. Goodbye!");
                 System.out.println("Visit Again!");
+                System.out.println("-----------------------------");
                 return;
             }
         }
