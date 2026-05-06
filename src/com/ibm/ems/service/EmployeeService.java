@@ -22,6 +22,8 @@ public class EmployeeService {
         employees.add(new ContractEmployee(12, "Pooja", 42000));
         employees.add(new PermanentEmployee(13, "Manoj", 65000));
         employees.add(new ContractEmployee(14, "Neha", 37000));
+        employees.add(new PermanentEmployee(15, "Suresh", 55000));  
+        
     }
 
     public void addEmployee(Employee e) {
