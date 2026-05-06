@@ -50,17 +50,19 @@ public class EmployeeService {
         throw new Exception("Employee not found");
     }
 
-    public void updateEmployee(int id, String name, double salary) throws Exception {
-        Employee e = findById(id);
-        e.setName(name);
-        e.setSalary(salary);
-    }
+
 
     public void deleteEmployee(int id) throws Exception {
         Employee e = findById(id);
         employees.remove(e);
     }
 
+    public void updateEmployee(int id, String name, double salary) throws Exception {
+        Employee e = findById(id);
+        e.setName(name);
+        e.setSalary(salary);
+    }
+    
     public List<Employee> searchByName(String name) {
         List<Employee> list = new ArrayList<>();
         for (Employee e : employees) {
