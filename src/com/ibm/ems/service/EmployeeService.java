@@ -22,17 +22,8 @@ public class EmployeeService {
         employees.add(new ContractEmployee(12, "Pooja", 42000));
         employees.add(new PermanentEmployee(13, "Manoj", 65000));
         employees.add(new ContractEmployee(14, "Neha", 37000));
-    }
+    } 
 
-    public void addEmployee(Employee e) {
-        for (Employee emp : employees) {
-            if (emp.getId() == e.getId()) {
-                System.out.println("ID already exists!");
-                return;
-            }
-        }
-        employees.add(e);
-    }
 
     public List<Employee> getAll() {
         return employees;
