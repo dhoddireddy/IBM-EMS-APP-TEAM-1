@@ -27,6 +27,18 @@ public class EmployeeService {
         employees.add(new PermanentEmployee(17, "Ramesh", 72000));      
     } 
 
+    public void addEmployee(Employee e) {
+        for (Employee emp : employees) {
+            if (emp.getId() == e.getId()) {
+                System.out.println("ID already exists!");
+                System.out.println("Thanks for using IBM EMS System. Goodbye!");
+                System.out.println("Visit Again!");
+                System.out.println("-----------------------------");
+                return;
+            }
+        }
+        employees.add(e);
+    }
 
     public List<Employee> getAll() {
         return employees;
