@@ -29,6 +29,7 @@ public class EmployeeService {
             if (emp.getId() == e.getId()) {
                 System.out.println("ID already exists!");
                 System.out.println("Thanks for using IBM EMS System. Goodbye!");
+                System.out.println("Visit Again!");
                 return;
             }
         }
