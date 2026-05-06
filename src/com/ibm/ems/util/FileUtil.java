@@ -6,42 +6,67 @@ import com.ibm.ems.model.*;
 
 public class FileUtil {
 
-    public static void save(List<Employee> list) throws Exception {
-        BufferedWriter bw = new BufferedWriter(new FileWriter("employees.txt"));
+    private static final String FILE_NAME = "employees.txt";
 
-        for (Employee e : list) {
-            bw.write(e.getId() + "," + e.getName() + "," + e.getSalary() + "," + e.getClass().getSimpleName());
-            bw.newLine();
+    public static void saveEmployees(List<Employee> employees) throws IOException {
+
+        try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
+
+            for (Employee emp : employees) {
+
+                String type;
+
+                if (emp instanceof PermanentEmployee) {
+                    type = "P";
+                } else {
+                    type = "C";
+                }
+
+                String data = emp.getId() + "|"
+                            + emp.getName() + "|"
+                            + emp.getSalary() + "|"
+                            + type;
+
+                writer.println(data);
+            }
         }
-
-        bw.close();
     }
 
-    public static List<Employee> load() throws Exception {
+    public static List<Employee> loadEmployees() throws IOException {
 
-        List<Employee> list = new ArrayList<>();
-        File file = new File("employees.txt");
+        List<Employee> employees = new LinkedList<>();
 
-        if (!file.exists()) return list;
+        File file = new File(FILE_NAME);
 
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-
-        while ((line = br.readLine()) != null) {
-
-            String[] d = line.split(",");
-
-            int id = Integer.parseInt(d[0]);
-            String name = d[1];
-            double sal = Double.parseDouble(d[2]);
-
-            if (d[3].equals("PermanentEmployee"))
-                list.add(new PermanentEmployee(id, name, sal));
-            else
-                list.add(new ContractEmployee(id, name, sal));
+        if (!file.exists()) {
+            return employees;
         }
 
-        br.close();
-        return list;
+        try (Scanner sc = new Scanner(file)) {
+
+            while (sc.hasNextLine()) {
+
+                String row = sc.nextLine();
+
+                StringTokenizer st = new StringTokenizer(row, "|");
+
+                int id = Integer.parseInt(st.nextToken());
+                String name = st.nextToken();
+                double salary = Double.parseDouble(st.nextToken());
+                String type = st.nextToken();
+
+                Employee emp;
+
+                if (type.equals("P")) {
+                    emp = new PermanentEmployee(id, name, salary);
+                } else {
+                    emp = new ContractEmployee(id, name, salary);
+                }
+
+                employees.add(emp);
+            }
+        }
+
+        return employees;
     }
 }

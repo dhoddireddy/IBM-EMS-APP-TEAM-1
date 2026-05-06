@@ -5,12 +5,6 @@ public interface Payable {
 
 
 
-//   // Other methods related to payment processing can be added here
-//   For example:
-//   void processPayment(); 
-//   void generatePaySlip();
-//  These methods can be implemented by the classes that implement this interface
-
 
 }
 
