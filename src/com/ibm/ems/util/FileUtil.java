@@ -1,3 +1,5 @@
+
+
 package com.ibm.ems.util;
 
 import java.io.*;
@@ -8,6 +10,7 @@ public class FileUtil {
 
     private static final String FILE_NAME = "employees.txt";
 
+<<<<<<< HEAD
     public static void saveEmployees(List<Employee> employees) throws IOException {
 
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME))) {
@@ -29,6 +32,11 @@ public class FileUtil {
 
                 writer.println(data);
             }
+=======
+        for (Employee e : list) {
+            bw.write(e.getId() + " , " + e.getName() + " , " + e.getSalary() + " , " + e.getClass().getSimpleName());
+            bw.newLine();
+>>>>>>> 08f69eb8f2cc1f7e8b2d3a2ef3146d1cb086062e
         }
     }
 
